@@ -1,0 +1,55 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>app02</servlet-name>
+        <servlet-class>Controller.app02</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>app02_dealWithCode</servlet-name>
+        <servlet-class>Controller.app02_dealWithCode</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>app02_dealWithToken</servlet-name>
+        <servlet-class>Controller.app02_dealWithToken</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>app02_dealWithSource</servlet-name>
+        <servlet-class>Controller.app02_dealWithSource</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>app02_logout</servlet-name>
+        <servlet-class>Controller.app02_logout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>app02_register</servlet-name>
+        <servlet-class>Controller.app02_register</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>app02_register</servlet-name>
+        <url-pattern>/app02_register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>app02_logout</servlet-name>
+        <url-pattern>/app02_logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>app02_dealWithSource</servlet-name>
+        <url-pattern>/app02_dealWithSource</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>app02_dealWithToken</servlet-name>
+        <url-pattern>/app02_dealWithToken</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>app02_dealWithCode</servlet-name>
+        <url-pattern>/app02_dealWithCode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>app02</servlet-name>
+        <url-pattern>/app02</url-pattern>
+    </servlet-mapping>
+</web-app>

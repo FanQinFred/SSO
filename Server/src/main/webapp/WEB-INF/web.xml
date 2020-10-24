@@ -1,0 +1,46 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>AuthorizationServer_sendToken</servlet-name>
+    <servlet-class>AuthorizationServer.AuthorizationServer_sendToken</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SourceOwner_sendCode</servlet-name>
+    <servlet-class>SourceServer.SourceOwner_sendCode</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SourceOwner_sendSource</servlet-name>
+    <servlet-class>SourceServer.SourceOwner_sendSource</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SourceOwner_register</servlet-name>
+    <servlet-class>SourceServer.SourceOwner_register</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SourceOwner_logout</servlet-name>
+    <servlet-class>SourceServer.SourceOwner_logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SourceOwner_logout</servlet-name>
+    <url-pattern>/SourceOwner_logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SourceOwner_register</servlet-name>
+    <url-pattern>/SourceOwner_register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SourceOwner_sendCode</servlet-name>
+    <url-pattern>/SourceOwner_sendCode</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SourceOwner_sendSource</servlet-name>
+    <url-pattern>/SourceOwner_sendSource</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AuthorizationServer_sendToken</servlet-name>
+    <url-pattern>/AuthorizationServer_sendToken</url-pattern>
+  </servlet-mapping>
+</web-app>
