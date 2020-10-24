@@ -24,7 +24,7 @@
     <input type="password" name="conf_password">
 </label>
     <br>
-    电话号码:<label>
+    (选填)电话号码:<label>
     <input type="text" name="phone_num">
     <input type="hidden" name="LOCAL_SERVICE" value="http://localhost:8081/app01">
 </label>

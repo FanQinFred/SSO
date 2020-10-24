@@ -1,5 +1,6 @@
 package AuthorizationServer;
 
+import Utils.XorEncryption;
 import dao.UserDao;
 import domain.User;
 import org.apache.commons.codec.binary.Base64;
@@ -18,7 +19,10 @@ import java.util.Calendar;
 
 public class AuthorizationServer_sendToken extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String code = request.getParameter("code");
+        String en_code = request.getParameter("code");
+        // code解密
+        int key=0x10;
+        String code= XorEncryption.stringEncryption(en_code,key);
         String username = request.getParameter("username");
         String LOCAL_SERVICE=request.getParameter("LOCAL_SERVICE");
         if (code.equals(username)) {

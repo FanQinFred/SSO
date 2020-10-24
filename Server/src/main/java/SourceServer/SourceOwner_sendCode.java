@@ -1,5 +1,6 @@
 package SourceServer;
 
+import Utils.XorEncryption;
 import dao.UserDao;
 import domain.User;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +20,9 @@ public class SourceOwner_sendCode extends HttpServlet {
         try {
             User user = UserDao.get(username);
             if(user!=null&&user.pwd.equals(password)){
-                String code = username;
+                int key=0x10;
+                // code加密
+                String code= XorEncryption.stringEncryption(username,key);
                 response.sendRedirect(LOCAL_SERVICE+"_dealWithCode?code="+code+"&username="+username+"&LOCAL_SERVICE="+LOCAL_SERVICE);
             }
             else{
