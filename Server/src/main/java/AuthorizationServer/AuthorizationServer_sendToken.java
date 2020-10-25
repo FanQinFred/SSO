@@ -21,10 +21,13 @@ public class AuthorizationServer_sendToken extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String en_code = request.getParameter("code");
         // code解密
+        System.out.println("AuthorizationServer_sendToken doPost"
+        );
         int key=0x10;
         String code= XorEncryption.stringEncryption(en_code,key);
         String username = request.getParameter("username");
         String LOCAL_SERVICE=request.getParameter("LOCAL_SERVICE");
+        System.out.println("code: "+code+"_______username= "+username);
         if (code.equals(username)) {
             OAuthIssuer oauthIssuerImpl = null;
             oauthIssuerImpl = new OAuthIssuerImpl(new MD5Generator());
@@ -44,11 +47,13 @@ public class AuthorizationServer_sendToken extends HttpServlet {
                 session.setAttribute("token", token);
             } catch (OAuthSystemException e) {
                 e.printStackTrace();
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
             request.getRequestDispatcher("/WEB-INF/jsp/sendToken.jsp").forward(request, response);
+        }
+        else{
+            response.sendRedirect("http://localhost:8080");
         }
     }
 

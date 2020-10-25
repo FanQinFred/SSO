@@ -13,6 +13,7 @@ public class SourceOwner_sendCode extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //接收账号密码
         String username = request.getParameter("username");
+        System.out.println("username: "+username+"SourceOwner_sendCode");
         String password = request.getParameter("password");
         String LOCAL_SERVICE=request.getParameter("LOCAL_SERVICE");
         //验证账号密码
@@ -23,7 +24,12 @@ public class SourceOwner_sendCode extends HttpServlet {
                 int key=0x10;
                 // code加密
                 String code= XorEncryption.stringEncryption(username,key);
-                response.sendRedirect(LOCAL_SERVICE+"_dealWithCode?code="+code+"&username="+username+"&LOCAL_SERVICE="+LOCAL_SERVICE);
+                System.out.println(("code: "+code+"SourceOwner_sendCode"));
+                request.setAttribute("LOCAL_SERVICE",LOCAL_SERVICE);
+                request.setAttribute("code",code);
+                request.setAttribute("username",username);
+                request.getRequestDispatcher("/WEB-INF/jsp/sendCode.jsp").forward(request, response);
+                //response.sendRedirect(LOCAL_SERVICE+"_dealWithCode?code="+code+"&username="+username+"&LOCAL_SERVICE="+LOCAL_SERVICE);
             }
             else{
                 response.sendRedirect(LOCAL_SERVICE+"?info=YourUsernameOrPasswordIsWrong.");

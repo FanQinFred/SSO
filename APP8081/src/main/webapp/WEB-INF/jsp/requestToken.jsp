@@ -13,7 +13,6 @@
         function submitForms()
         {
             setTimeout("document.getElementById('form2').submit()",500);
-
         }
     </script>
 </head>

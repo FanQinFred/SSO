@@ -34,9 +34,9 @@
         <form class="form-signin" method="post" action="http://localhost:8080/SourceOwner_sendCode">
             <h2 class="form-signin-heading">Please sign in</h2>
             <label for="User Name" class="sr-only">User Name</label>
-            <input id="User Name" class="form-control" placeholder="Email address" required autofocus>
+            <input name="username" id="User Name" class="form-control" placeholder="Email address" required autofocus>
             <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
             <label>
                 <p>来自域：<input type="text" name="LOCAL_SERVICE" value="http://localhost:8082/app02" readonly></p>
             </label>
