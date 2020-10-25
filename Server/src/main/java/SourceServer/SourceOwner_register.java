@@ -9,9 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+/**
+ * @className: SourceOwner_register
+ * @packageName: SourceServer
+ * @description: 用于APP的注册
+ **/
 @WebServlet(name = "SourceOwner_register")
 public class SourceOwner_register extends HttpServlet {
+    /**
+     @description:处理doPost请求
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -21,6 +28,7 @@ public class SourceOwner_register extends HttpServlet {
         if(password.equals(conf_password)){
             try {
                 User user = UserDao.get(username);
+                //用户名未被注册
                 if(user==null){
                     User new_user=new User();
                     new_user.setUsr_name(username);
@@ -30,6 +38,7 @@ public class SourceOwner_register extends HttpServlet {
                     UserDao.add(new_user);
                     response.sendRedirect(LOCAL_SERVICE+"?info=NowYouCanLogin.");
                 }
+                //用户名已被注册
                 else{
                     response.sendRedirect(LOCAL_SERVICE+"_register?info=TheUsernameIsUsed.");
                 }

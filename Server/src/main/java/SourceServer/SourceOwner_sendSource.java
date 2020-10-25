@@ -13,8 +13,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
-
+/**
+ * @className: SourceOwner_sendSource
+ * @packageName:
+ * @description: 用于向APP发送资源
+ **/
 public class SourceOwner_sendSource extends HttpServlet {
+    /**
+     @description:处理doPost请求
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         //接受username和token
@@ -25,6 +32,7 @@ public class SourceOwner_sendSource extends HttpServlet {
         String tk = null;
         long tct=0;
         long curr_tct=0;
+        //获取当前时间（戳）
         Calendar calendar=Calendar.getInstance();
         curr_tct=calendar.getTimeInMillis();
         try {

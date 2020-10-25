@@ -11,7 +11,7 @@ import domain.Book;
 /**
  * 访问数据库
  * 
- * @author liuji
+ * @author QinFan
  * 
  */
 public class BookDao {

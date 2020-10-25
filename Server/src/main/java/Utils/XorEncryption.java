@@ -1,5 +1,9 @@
 package Utils;
-
+/**
+ * @className: XorEncryption
+ * @packageName: Utils
+ * @description: 用于code的加密解密
+ **/
 public class XorEncryption {
     public static String stringEncryption(String para, int key){
         char[] charArray = para.toCharArray();

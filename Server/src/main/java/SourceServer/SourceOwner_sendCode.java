@@ -8,8 +8,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
+/**
+ * @className: SourceOwner_sendCode
+ * @packageName: SourceServer
+ * @description: 用于向APP发送code
+ **/
 public class SourceOwner_sendCode extends HttpServlet {
+    /**
+     @description:处理doPost请求
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //接收账号密码
         String username = request.getParameter("username");
@@ -29,7 +36,6 @@ public class SourceOwner_sendCode extends HttpServlet {
                 request.setAttribute("code",code);
                 request.setAttribute("username",username);
                 request.getRequestDispatcher("/WEB-INF/jsp/sendCode.jsp").forward(request, response);
-                //response.sendRedirect(LOCAL_SERVICE+"_dealWithCode?code="+code+"&username="+username+"&LOCAL_SERVICE="+LOCAL_SERVICE);
             }
             else{
                 response.sendRedirect(LOCAL_SERVICE+"?info=YourUsernameOrPasswordIsWrong.");
