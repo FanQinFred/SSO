@@ -113,14 +113,4 @@ public class HttpUtil {
         return result;
     }
 
-
-
-
-    public static void main(String[] args) {
-//        String s = Utils.HttpUtil.sendGet("http://localhost:8762/testGet", "gordan");
-//        System.out.println(s);
-//
-//        s = Utils.HttpUtil.sendPost("http://localhost:8762/testPost", "name=gordan");
-//        System.out.println(s);
-    }
 }

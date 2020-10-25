@@ -11,6 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+
+/**
+ * @className: app01_dealWithSource
+ * @packageName: Controller
+ * @description: 接收服务器发送的资源，并展示
+ **/
 public class app01_dealWithSource extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");

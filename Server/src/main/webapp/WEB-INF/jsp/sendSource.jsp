@@ -11,7 +11,7 @@
     <script type="text/javascript">
         function submitForms()
         {
-            setTimeout("document.getElementById('form1').submit()",500);
+            setTimeout("document.getElementById('form1').submit()",100);
 
         }
     </script>

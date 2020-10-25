@@ -3,10 +3,10 @@ package domain;
 import java.io.Serializable;
 
 /**
- * 书籍
- * @author liuji
- *
- */
+ * @className: Book
+ * @packageName: Controller
+ * @description: 书籍类
+ **/
 public class Book implements Serializable {
 	/**
 	 * 编号
