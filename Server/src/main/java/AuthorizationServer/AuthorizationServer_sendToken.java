@@ -1,9 +1,8 @@
 package AuthorizationServer;
 
-import Utils.XorEncryption;
+import Utils.Encryption;
 import dao.UserDao;
 import domain.User;
-import org.apache.commons.codec.binary.Base64;
 import org.apache.oltu.oauth2.as.issuer.MD5Generator;
 import org.apache.oltu.oauth2.as.issuer.OAuthIssuer;
 import org.apache.oltu.oauth2.as.issuer.OAuthIssuerImpl;
@@ -30,9 +29,13 @@ public class AuthorizationServer_sendToken extends HttpServlet {
         String en_code = request.getParameter("code");
         // code解密
         int key=0x10;
-        String code= XorEncryption.stringEncryption(en_code,key);
+        System.out.println("解密前code: "+en_code);
+        String code= Encryption.stringDecryption(en_code,key);
         String username = request.getParameter("username");
         String LOCAL_SERVICE=request.getParameter("LOCAL_SERVICE");
+        System.out.println("AuthorizationServer_sendToken");
+        System.out.println("code: "+code);
+        System.out.println("username: "+username);
         if (code.equals(username)) {
             OAuthIssuer oauthIssuerImpl = null;
             oauthIssuerImpl = new OAuthIssuerImpl(new MD5Generator());
