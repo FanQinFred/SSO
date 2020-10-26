@@ -14,7 +14,7 @@ import java.io.IOException;
  * @packageName: SourceServer
  * @description: 用于APP的注册
  **/
-@WebServlet(name = "SourceOwner_register")
+
 public class SourceOwner_register extends HttpServlet {
     /**
      @description:处理doPost请求

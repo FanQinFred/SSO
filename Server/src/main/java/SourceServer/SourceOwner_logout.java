@@ -14,7 +14,7 @@ import java.io.IOException;
  * @packageName: SourceServer
  * @description: 用于APP的登出操作
  **/
-@WebServlet(name = "SourceOwner_logout")
+
 public class SourceOwner_logout extends HttpServlet {
     /**
      @description:处理doPost请求
