@@ -16,7 +16,7 @@ import java.io.IOException;
 public class app01 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
-
+// include《》
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //检查是否登录
         boolean flag = false;
